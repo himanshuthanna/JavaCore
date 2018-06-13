@@ -1,0 +1,98 @@
+import java.util.*;
+class A{
+public static void main(String args[])
+     {  Scanner sc=new Scanner(System.in);
+	    System.out.println("no. of elements you want in array");
+		int n=sc.nextInt();
+		int arr[]=new int[n+1];
+	    System.out.println("enter array elements");
+		for(int i=0;i<n;i++)
+		{  arr[i]=sc.nextInt();
+		}
+		System.out.println("Operations You can Perform");
+		System.out.println("1: Add new array element");
+		System.out.println("2: Remove array element");
+		System.out.println("3: Add array elements");
+		System.out.println("4: Find largest array element");
+		System.out.println("5: Find smallest array element");
+		System.out.println("6: search element");
+		System.out.println("7: sort array element in ascending order");
+	    int d=sc.nextInt();
+        switch(d)
+            { case 1:   System.out.println("enter new element");
+			            int ele=sc.nextInt();
+                        System.out.println("At what position you want to add");
+                        int pos1=sc.nextInt();
+                        for(int i=n-1;i>=pos1;i--)
+						{ arr[i+1]=arr[i]; 
+						}
+						arr[pos1]=ele;
+						System.out.println("Array element successfully added");
+						System.out.println("elements are:");
+						for(int i=0;i<=n;i++)
+		                {  System.out.print(arr[i]+" ");
+		                }
+                        break;
+              case 2:   System.out.println("enter at what position element you want to remove");
+			            int pos2=sc.nextInt();
+                        for(int i=pos2;i<n;i++)
+						{ arr[i]=arr[i+1]; 
+						}
+						System.out.println("Array element successfully removed");
+						System.out.println("Remaining elements are:");
+						for(int i=0;i<n-1;i++)
+		                {  System.out.print(arr[i]+" ");
+		                }
+                        break; 	
+              case 3:   System.out.println("sum of array elements is");
+			            int sum=0;
+                        for(int i=0;i<n;i++)
+						{ sum=sum+arr[i]; 
+						}
+	                    System.out.println(sum);
+                        break;
+              case 4:   System.out.println("Largest element is");
+			            int l=arr[0];
+                        for(int i=0;i<n;i++)
+						{ if(l<arr[i])
+                            l=arr[i];							
+						}
+	                    System.out.println(l);
+                        break;	
+             case 5:   System.out.println("smallest element is");
+			            int s=arr[0];
+                        for(int i=0;i<n;i++)
+						{ if(s>arr[i])
+                            s=arr[i];							
+						}
+	                    System.out.println(s);
+                        break;	
+             case 6:   System.out.println("enter element");
+			            int ele2=sc.nextInt();
+						int j=1;
+                        for(int i=0;i<n;i++)
+						{ if(ele2==arr[i])
+		                    {System.out.println("element found at index"+i);
+						     j=0;}
+						}
+						if(j!=0)
+						{System.out.println("element not found in array");}
+                        break;
+             case 7:   System.out.println("elements in ascending order are:");
+						int temp=0;
+                        for(int i=0;i<=n-1;i++)
+							
+						  { for(int k=0;k<n-i-1;k++)
+						    { if(arr[k]>arr[k+1])
+								{temp=arr[k];
+                             arr[k]=arr[k+1];
+								arr[k+1]=temp;}							 
+						    }
+						  }
+						for(int i=0;i<n;i++)
+	                    {System.out.print(arr[i]+" ");}
+                        break;						
+			}		
+	 }
+
+}
