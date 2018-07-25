@@ -1,0 +1,12 @@
+class MultiThread implements Runnable{
+ public static void main(String args[])
+        {  MultiThread m=new MultiThread();
+           m.run();		
+		    }
+		   public void run(){
+		    System.out.println("hello");
+		
+		}
+
+
+}
