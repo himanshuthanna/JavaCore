@@ -1,0 +1,19 @@
+// Java program to check if the given 
+
+import java.io.File;
+import java.io.IOException;
+ 
+public class HiddenFileCheck
+{
+  public static void main(String[] args)
+         throws IOException, SecurityException
+  {
+    
+    File file = new File("A:\\notes\\TextFileForFileHandling/write.txt");
+ 
+    if (file.isHidden())
+      System.out.println("The specified file is hidden");
+    else
+      System.out.println("The specified file is not hidden");
+  }
+}
