@@ -1,0 +1,29 @@
+class Thread4 extends Thread{
+    public static void main(String args[])
+	 {  Thread4 t1=new Thread4();
+	     t1.run();
+	 
+	 }
+    public void run(){
+	   for(int i=0;i<=10;i++)
+	      {  if(i==6)
+		      { try{
+			       Thread.sleep(5000);
+				    System.out.println(i);
+			      }
+				 catch(Exception e)
+				   {
+				    System.out.println(e);
+				   }
+				  
+			    
+			  }
+			  else
+              {
+			    System.out.println(i);
+			  }			  
+		    
+		  }
+	  
+	  }
+}
