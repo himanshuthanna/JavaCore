@@ -1,0 +1,27 @@
+class Thread2 implements Runnable{
+    String[] color={"green","yellow","blue","red","orange"};
+	 int max=color.length;
+	 int min=0;
+  public static void main(String args[])
+      {  Thread2 t1=new Thread2();
+	     t1.run();
+		
+	     
+	  }
+   public void run(){
+    for(int i=0;i<=max;i++)
+	   {
+        int randomNum = min + (int)(Math.random() * max);
+		   if(color[randomNum]!="red")
+		    { System.out.println("color is:"+color[randomNum]);
+			} 
+			else
+			{   System.out.println("color is:"+color[randomNum]);
+            	i=max+1;
+			}
+    	}
+	
+      
+   }	  
+
+}
