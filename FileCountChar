@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Scanner;
+class FileCountChar{
+   public static void main(String args[])
+     {  HashMap<Character,Integer> m=new HashMap<>();
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("enter the character to be counted");
+		String s=sc.next();
+        char ch=s.charAt(0);
+        String ss="",s2;		
+	    
+	  try{ int i;
+	    FileInputStream fin=new  FileInputStream("D:\\xyz.txt");
+	   BufferedInputStream bin=new BufferedInputStream(fin);
+	   while((i=bin.read())!=-1)
+	   {    ss=ss+(char)i;
+           
+	   }
+	   s2=ss.toLowerCase();
+	   int l=s2.length();
+	   for(int j=0;j<l;j++)
+	    {   char c=s2.charAt(j);
+		  
+		   if(m.containsKey(c))
+                { m.put(c,m.get(c)+1);
+ 				}			
+	        else
+			{
+			  m.put(c,1);
+			}
+		 
+		}
+	    bin.close();
+		}
+	   catch(Exception e)
+	     {
+		  System.out.println(e);
+		 }
+		 System.out.println(m.get(ch));
+	   
+	 }
+
+
+
+}
