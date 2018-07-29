@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.TreeMap;
+class FileWordCount{
+  public static void main(String args[])
+    { 
+	  TreeMap<String,Integer> h=new TreeMap<>();
+	  try{ int i;
+	       String ss="";
+	       FileInputStream fin=new FileInputStream("B:\\abc.txt");
+		   BufferedInputStream bin=new BufferedInputStream(fin);
+		   FileOutputStream Fwrite=new FileOutputStream("B:\\xyz.txt") ;
+		   while((i=bin.read())!=-1)
+		     { ss=ss+(char)i; 
+		     }
+		   String[] words=ss.split("\\s");
+           int l=words.length;
+           for (String a : words)
+			   { 
+           Integer freq = h.get(a); 
+           h.put(a, (freq == null) ? 1 : freq + 1);  
+	       }
+		   for (Map.Entry<String,Integer> entry : h.entrySet()) {
+           String content = (String)entry.getKey() + ": " +entry.getValue()+",";
+           byte[] contentInBytes = content.getBytes();
+           Fwrite.write(contentInBytes);
+		   }
+           System.out.println("Done");
+		
+		  
+		}
+	  catch(Exception e)
+	  {
+		  System.out.println(e);
+	  }	  
+	  
+	}
+
+}
