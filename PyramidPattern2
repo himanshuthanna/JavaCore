@@ -1,0 +1,20 @@
+//Mirror image of Pyramid 
+class Pattern2{
+   public static void main(String args[])
+     { for(int i=0;i<10;i++)
+	    { for(int j=i;j>0;j--)
+		    {  System.out.print(" ");
+			  
+			}
+			 for(int k=10-i;k>0;k--)
+			    { System.out.print("*");
+				  System.out.print(" ");
+				  
+				}
+			System.out.println("");
+		  
+		}
+	   
+	 }
+
+}
