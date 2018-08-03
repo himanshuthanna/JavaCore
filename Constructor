@@ -1,0 +1,34 @@
+public class Construct{
+    String a;
+	int b,c;
+	Construct(){
+	 a="udit";
+     b=30;
+     c=45;	 
+	}
+	Construct(String x,int y){
+	  a=x;
+	  b=y;
+	}
+	Construct(String a,int b,int c){
+	  this.a=a;
+	  this.b=b;
+	  this.c=c;
+	   
+	}
+    void display()
+	 { System.out.println("hello..");
+	   System.out.println("Name is:"+a);
+	   System.out.println("Age is:"+b);
+	   System.out.println("Marks is:"+c);
+	 }
+	 public static void main(String args[])
+	  { Construct c1=new Construct();
+	    c1.display();
+		Construct c2=new Construct("Ashu",25);
+	    c2.display();
+		Construct c3=new Construct("xyz",50,40);
+	    c3.display();
+		
+	  }
+}
