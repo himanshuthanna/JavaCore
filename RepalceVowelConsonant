@@ -1,0 +1,27 @@
+import java.util.*;
+class Repalce{
+  public static void main(String args[])
+   {   Scanner sc=new Scanner(System.in);
+       String str=sc.nextLine();
+	   int len=str.length();
+	   String str2=str;
+	   for(int i=0;i<len;i++)
+	   { char c=str2.charAt(i);
+         
+		 String s1=Character.toString(c);
+		
+         if(s1.equals("a") || s1.equals("e") || s1.equals("i") || s1.equals("o") || s1.equals("u"))
+		 {
+			str=str.replace(s1,"$"); 
+		//	System.out.println(str);
+		 }	
+        else{
+		   	str=str.replace(s1,"#"); 
+	     	}		 
+	   }
+	      System.out.println(str);
+     
+   }
+
+
+}
